@@ -12,7 +12,7 @@ class Character
 
   def identify
     puts "What is your name?"
-    @name = gets
+    @name = gets.gsub("\n", "")
   end
 
   def change_location(location)
