@@ -14,7 +14,7 @@ Currently you can:
 - check your inventory by typing ‘inventory’
 - get help by typing 'help'
 - look at the room you are in again by typing ‘look’
-- to see where you can teleport, type 'where'
+- to see where you can teleport, type 'places'
 - you can get a teleporter in the Academy
 - to teleport to a room, use 'teleport to ' and add the room name
 - On 'exit' the game saves your data
