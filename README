@@ -1,0 +1,20 @@
+This code repo is for my daughter and I.
+
+Expect this to:
+- develop all the time (hopefully getting better)
+- be simple simple code, no fancy stuff, so it might be horrible, horrible code!!! The idea is to get Joy to easily write some, not to teach her how to refactor and write clean code :)
+
+Run it:
+- ruby game.rb
+
+Currently you can:
+- take actions in rooms
+- pick up things
+- check your inventory by typing ‘inventory’
+- look at the room you are in again by typing ‘look’
+
+I’m planning on adding ‘save’ and ‘load’ soon, so you don’t have to go through the whole game every time. Also, I want to add ‘drop’ to drop things from your inventory. The idea is that, if later on in the quest you don’t have a much needed item (e.g. you did not pick up an explosive pen,) you can head back and get one, so I want to add options to go places you’ve already been...
+
+We’ll hopefully add one room every day!
+
+Ernst
