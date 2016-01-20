@@ -84,7 +84,7 @@ module Adventure
     def teleport_to(rooms, room)
       if @inventory.include?('teleportation device')
         if @visited[room]
-          puts "You enter the destination on your teleporter and press 'GO'. You spin faster and faster, hear a popping sound and see a number of rainbows surrounding you. You arrive at your destination!\n"
+          puts "You enter the destination on your teleporter and press 'GO'. You spin faster and faster, hear a popping sound and see a flurry of rainbows surrounding you. You arrive at your destination!\n"
           change_location(rooms[room])
           @location_seen = false
         else

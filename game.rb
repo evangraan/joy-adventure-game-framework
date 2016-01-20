@@ -13,7 +13,6 @@ module Adventure
       @rooms = load_rooms
       @character = Character.new
       @character.identify(@rooms)
-      @character.change_location(@rooms['Academy'])
     end
 
     def run

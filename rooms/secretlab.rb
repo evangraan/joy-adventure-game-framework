@@ -1,7 +1,7 @@
 module Adventure
   class Secretlab < Room
     def describe(character)
-      puts "You are in a secret laboratory! A large table and shelves are stacked with spy gear and cool things, such as grappling hooks, night vision goggles, pens that explode when you click them, invisible ink, small computers and a big red button. On the table lies a secret envelope with #{character.name} written on in! It must be a new mission! Next to the envelope is a strange device that labeled 'teleporter'"
+      puts "You are in a secret laboratory! A large table and shelves are stacked with spy gear and cool things, such as grappling hooks, night vision goggles, pens that explode when you click them, invisible ink, small computers and a big red button. On the table lies a secret envelope with #{character.name} written on in! It must be a new mission! Next to the envelope is a strange device labeled 'teleporter'"
     end
 
     def interpret(rooms, action, character)
