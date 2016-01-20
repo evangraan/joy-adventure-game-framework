@@ -28,6 +28,8 @@ We’ll hopefully add one room every day!
 To build your own game:
 - simply replace all the rooms/*.rb files with your own room files, and you have a new game!
 - Note that the 'interpret' method must always return the character.
+- Note that the 'interpret' method should call out as below to inherit default room behaviour:
+  super(rooms, action, character)
 - Note that room files must be all lowercase (no underscores, e.g. rooms/mygreatroom.rb) and the classnames must be all lowercase, no underscores, and the first letter capitalized (no CamelCase, e.g. Mygreatroom). This is required for the teleporter to work.
 
 Ernst
