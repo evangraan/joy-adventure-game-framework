@@ -14,23 +14,20 @@ module Adventure
 
     def interpret(rooms, action, character)
       if (action.include?('inventory'))
-        show_inventory
+        character.show_inventory
       elsif (action == 'look')
         character = character.look_at_room
       elsif (action == 'help')
         character.help
+      elsif (action == 'places')
+        character.places
+      elsif (action.include?('teleport'))
+        destination = action.gsub('teleport to ', '').gsub('teleport ', '')
+        destination = destination.capitalize
+        character.teleport_to(rooms, destination)
       else
         puts "I don't know how to interpret #{action}"
       end
-    end
-
-    private
-
-    def show_inventory
-      puts "You look at all the things you have. You see:"
-      character.inventory.each do |item, detail|
-        puts item
-      end      
     end
   end
 end

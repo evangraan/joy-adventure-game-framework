@@ -34,6 +34,21 @@ module Adventure
       location.interpret(rooms, action, character)
     end
 
+    def show_inventory
+      puts "You look at all the things you have. You see:"
+      @inventory.each do |item, detail|
+        puts item
+      end 
+    end
+
+    def has?(item)
+      not (@inventory[item].nil?)
+    end
+
+    def give(item)
+      @inventory[item] = 1
+    end
+
     def prompt
       @location.prompt
     end
