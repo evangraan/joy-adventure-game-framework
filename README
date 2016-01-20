@@ -12,6 +12,7 @@ Currently you can:
 - take actions in rooms
 - pick up things
 - check your inventory by typing ‘inventory’
+- get help by typing 'help'
 - look at the room you are in again by typing ‘look’
 - On 'exit' the game saves your data
 - On entering your name the first time you get instructions
@@ -20,5 +21,8 @@ Currently you can:
 I want to add ‘drop’ to drop things from your inventory. The idea is that, if later on in the quest you don’t have a much needed item (e.g. you did not pick up an explosive pen,) you can head back and get one, so I want to add options to go places you’ve already been...
 
 We’ll hopefully add one room every day!
+
+To build your own game:
+- simply replace all the rooms/*.rb files (except room.rb !! This is the secret sauce!!) with your own room files, and you have a new game!
 
 Ernst
