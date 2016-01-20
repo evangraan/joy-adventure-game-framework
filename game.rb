@@ -1,9 +1,8 @@
-require './rooms/room'
-require './rooms/academy'
-require './rooms/secret_lab'
-require './rooms/tube-car'
-require './character'
 require 'byebug'
+require './rooms/room'
+room_files = Dir["./rooms/*.rb"]
+room_files.each {|file| require file }
+require './character'
 
 class Game
   attr_accessor :rooms
@@ -11,11 +10,11 @@ class Game
 
   def initialize
     @rooms = {}
-    @rooms['academy'] = Academy.new
-    @rooms['secret-lab'] = SecretLab.new
-    @rooms['tube-car'] = TubeCar.new
-    @character = Character.new(@rooms['academy'])
-    @character.identify
+    @rooms['Academy'] = Academy.new
+    @rooms['SecretLab'] = SecretLab.new
+    @rooms['TubeCar'] = TubeCar.new
+    @character = Character.new(@rooms['Academy'])
+    @character.identify(@rooms)
   end
 
   def run
@@ -30,6 +29,13 @@ class Game
       puts "\n"
       @character = interpret(@rooms, action, @character) if action != 'exit'
       puts "\n"
+    end
+
+    filename = "saves/#{character.name.downcase}"
+    data = { 'location' => @character.location.class,
+             'inventory' => @character.inventory }
+    File.open(filename,"w") do |f|
+      f.write(data.to_json)
     end
   end
 

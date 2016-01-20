@@ -9,7 +9,7 @@ class Academy < Room
         action.include?('alice') or
         action.include?('wonderland'))
       puts "As you pull the book from the shelf, the bookshelf slides open!"
-      character.change_location(rooms['secret-lab'])
+      character.change_location(rooms['SecretLab'])
     else
       super(rooms, action, character)
     end

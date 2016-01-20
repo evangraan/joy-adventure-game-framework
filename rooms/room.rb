@@ -1,3 +1,5 @@
+require 'json'
+
 class Room
   def describe(character)
     puts "You are in a room"

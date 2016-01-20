@@ -5,6 +5,7 @@ Expect this to:
 - be simple simple code, no fancy stuff, so it might be horrible, horrible code!!! The idea is to get Joy to easily write some, not to teach her how to refactor and write clean code :)
 
 Run it:
+- You need to have byebug and json installed, I recommend using bundler
 - ruby game.rb
 
 Currently you can:
@@ -12,8 +13,11 @@ Currently you can:
 - pick up things
 - check your inventory by typing ‘inventory’
 - look at the room you are in again by typing ‘look’
+- On 'exit' the game saves your data
+- On entering your name the first time you get instructions
+- On re-entering the game and entering your name, the game loads your data
 
-I’m planning on adding ‘save’ and ‘load’ soon, so you don’t have to go through the whole game every time. Also, I want to add ‘drop’ to drop things from your inventory. The idea is that, if later on in the quest you don’t have a much needed item (e.g. you did not pick up an explosive pen,) you can head back and get one, so I want to add options to go places you’ve already been...
+I want to add ‘drop’ to drop things from your inventory. The idea is that, if later on in the quest you don’t have a much needed item (e.g. you did not pick up an explosive pen,) you can head back and get one, so I want to add options to go places you’ve already been...
 
 We’ll hopefully add one room every day!
 

@@ -43,7 +43,7 @@ class SecretLab < Room
       end
     elsif (action.include?('push') or action.include?('red') or action.include?('button'))
       puts "With a !!WOOSH!! a panel in the wall slides open and reveals a mega fast looking tube car and a tunnel stretching into the distance. The destination dial says 'to the land far, far away and over the hills'. You get in."
-      character.change_location(rooms['tube-car'])
+      character.change_location(rooms['TubeCar'])
     else
       super(rooms, action, character)
     end
