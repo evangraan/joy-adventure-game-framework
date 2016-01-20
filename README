@@ -23,6 +23,8 @@ I want to add ‘drop’ to drop things from your inventory. The idea is that, i
 We’ll hopefully add one room every day!
 
 To build your own game:
-- simply replace all the rooms/*.rb files (except room.rb !! This is the secret sauce!!) with your own room files, and you have a new game!
+- simply replace all the rooms/*.rb files with your own room files, and you have a new game!
+- Note that the 'interpret' method must always return the character.
+- Note that room files must me all lowercase (no underscores) and the classnames must be all lowercase, no underscores, and the first letter capitalized (no CamelCase). This is required for the teleporter to work.
 
 Ernst

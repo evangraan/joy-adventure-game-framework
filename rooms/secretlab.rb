@@ -1,7 +1,7 @@
 module Adventure
-  class SecretLab < Room
+  class Secretlab < Room
     def describe(character)
-      puts "You are in a secret laboratory! A large table and shelves are stacked with spy gear and cool things, such as grappling hooks, night vision goggles, pens that explode when you click them, invisible ink, small computers and a big red button. On the table lies a secret envelope with #{character.name} written on in! It must be a new mission!"
+      puts "You are in a secret laboratory! A large table and shelves are stacked with spy gear and cool things, such as grappling hooks, night vision goggles, pens that explode when you click them, invisible ink, small computers and a big red button. On the table lies a secret envelope with #{character.name} written on in! It must be a new mission! Next to the envelope is a strange device that labeled 'teleporter'"
     end
 
     def interpret(rooms, action, character)
@@ -45,6 +45,13 @@ module Adventure
       elsif (action.include?('push') or action.include?('red') or action.include?('button'))
         puts "With a !!WOOSH!! a panel in the wall slides open and reveals a mega fast looking tube car and a tunnel stretching into the distance. The destination dial says 'to the land far, far away and over the hills'. You get in."
         character.change_location(rooms['TubeCar'])
+      elsif (action.include?('teleport') and (not action.include?('teleport to')))
+        if character.inventory['teleportation device']
+          puts "You already have one. Its energy cell will last for years, you don't need another."
+        else
+          puts "The teleportation device softly hums and is warm to the touch. It must have quite a powerful energy cell. You put it in your back pocket."
+          character.inventory['teleportation device'] = 1
+        end
       else
         super(rooms, action, character)
       end

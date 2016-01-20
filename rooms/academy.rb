@@ -10,7 +10,7 @@ module Adventure
           action.include?('alice') or
           action.include?('wonderland'))
         puts "As you pull the book from the shelf, the bookshelf slides open!"
-        character.change_location(rooms['SecretLab'])
+        character.change_location(rooms['Secretlab'])
       else
         super(rooms, action, character)
       end

@@ -1,5 +1,5 @@
 require 'byebug'
-require './rooms/room'
+require './room'
 room_files = Dir["./rooms/*.rb"]
 room_files.each {|file| require file }
 require './character'
@@ -11,8 +11,9 @@ module Adventure
 
     def initialize
       @rooms = load_rooms
-      @character = Character.new(@rooms['Academy'])
+      @character = Character.new
       @character.identify(@rooms)
+      @character.change_location(@rooms['Academy'])
     end
 
     def run
