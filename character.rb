@@ -99,14 +99,14 @@ module Adventure
 
     def load_or_greet(rooms, name)
       filename = "saves/#{@name.downcase}"
-      File.exists?(filename) ? load_saved_data(rooms, filename) : welcome
+      File.exists?(filename) ? load_saved_data(rooms, filename) : welcome(rooms)
     end
 
     def load_saved_data(rooms, filename)
       content = File.read(filename)
       data = JSON.parse(content)
       @location = rooms[data['location']]
-      @location ||= 'Academy'
+      @location ||= rooms['Academy']
       @location_seen = false
       @inventory = data['inventory']
       @inventory ||= {}
@@ -118,8 +118,10 @@ module Adventure
       puts "\nWelcome adventurer #{@name}!!"
     end
 
-    def welcome
+    def welcome(rooms)
       greet
+      @location ||= rooms['Academy']
+      @location_seen = false
       help
     end
   end
