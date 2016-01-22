@@ -45,6 +45,10 @@ module Adventure
       not (@inventory[item].nil?)
     end
 
+    def remove(item)
+      @inventory.delete(item)
+    end
+
     def give(item)
       @inventory[item] = 1
     end
