@@ -1,12 +1,20 @@
 module Adventure
   class Castle < Room
     def describe(character)
-      puts "\nYou stand in front of a beautiful, majestic palace. Opulance surrounds you. Tall ramparts draped in colourful blue, green and red flags greet you, and a sense of honor and pride exudes from every brick in the majestic building. A draw-bridge leads from the court-yard, past a perfectly kept flower garden, across a wide moat, and beyond the raised portcullis into the wondrous castle beyond. No-one else seems to be around. Someone has left goods for the market standing by a small cart. These include apples, mushrooms, pears, and a few big steaks. It looks like they left in a hurry, perhaps something scared them."
+      puts "\nYou stand in front of a beautiful, majestic palace. Opulance surrounds you.\n" +
+           "Tall ramparts draped in colourful blue, green and red flags greet you, and a\n" +
+           "sense of honor and pride exudes from every brick in the majestic building. A\n" +
+           "draw-bridge leads from the court-yard, past a perfectly kept flower garden,\n" +
+           "across a wide moat, and beyond the raised portcullis into the wondrous castle\n" +
+           "beyond. No-one else seems to be around. Someone has left goods for the market\n" +
+           "standing by a small cart. These include apples, mushrooms, pears, and a few big\n" +
+           "steaks. It looks like they left in a hurry, perhaps something scared them."
 
       if character.has?('piece of steak')
         puts "A big dog is here chewing on a steak. He seems quite content."
       else
-        puts "A big, scary dog is here, growling at you and blocking your path over the draw-bridge. He looks very hungry and his bark is very loud. Perhaps he will feel better if someone fed him."
+        puts "A big, scary dog is here, growling at you and blocking your path over the draw-bridge.\n" +
+             "He looks very hungry and his bark is very loud. Perhaps he will feel better if someone fed him."
       end
     end
 
@@ -41,7 +49,8 @@ module Adventure
         end
       elsif (action.include?('feed') or (action.include?('food'))) or (action.include?('steak') and action.include?('dog'))
         if character.has?('steak') or character.has?('piece of steak')
-          puts "You carefully reach out and give a piece of steak to the dog. He loves you for it and starts chomping on it. You pick up another steak just to have one handy, in case the dog becomes hungry again!"
+          puts "You carefully reach out and give a piece of steak to the dog. He loves you for it and starts chomping on it.\n" +
+               "You pick up another steak just to have one handy, in case the dog becomes hungry again!"
           character.remove('steak')
           character.give('piece of steak')
         else
@@ -49,8 +58,9 @@ module Adventure
         end
       elsif (action.include?('draw') or (action.include?('bridge')))
         if character.has?('piece of steak')
-          puts "You briskly walk across the bridge and into the castle! The bridge creaks underfoot and the view of the moat and the spectacular castle walls and portcullis is amazing!"
-          character.change_location(rooms['Ballroom'])
+          puts "You briskly walk across the bridge and into the castle!\n" +
+               "The bridge creaks underfoot and the view of the moat and the spectacular castle walls and portcullis is amazing!"
+          character.change_location(rooms['Courtyard'])
         else
           puts "The dog growls at you angrily. You are not getting past him!"
         end

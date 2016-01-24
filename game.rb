@@ -76,7 +76,7 @@ module Adventure
 
     def load_room(rooms, room)
       room = room.gsub("class ", "").gsub(" < Room", "")
-      rooms[room] = Object::const_get("Adventure::#{room}").new
+      rooms[room] = Object::const_get("Adventure")::const_get(room).new
       rooms
     end
   end
