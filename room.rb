@@ -13,7 +13,7 @@ module Adventure
     end
 
     def interpret(rooms, action, character)
-      if (action.include?('inventory'))
+      if (action.include?('inventory') or (action == 'i'))
         character.show_inventory
       elsif (action == 'look')
         character = character.look_at_room
@@ -25,6 +25,9 @@ module Adventure
         destination = action.gsub('teleport to ', '').gsub('teleport ', '')
         destination = destination.capitalize
         character.teleport_to(rooms, destination)
+      elsif action.include?('map') and character.has?('parchment map')
+        puts "The map shows a pathway and a bridge crossing a stream leaving from \n" +
+        "the palace courtyard."
       else
         puts "I don't know how to interpret #{action}"
       end
