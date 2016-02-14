@@ -12,7 +12,7 @@ module Adventure
     def interpret(rooms, action, character)
       if (action.include?('envelope') or action.include?('open') or action.include?('read'))
         puts "The letter reads: 'Your mission, if you choose to accept it, is to travel\n" +
-             "to the the land far away and over the hills, and meet with the prince prince\n" +
+             "to the the land far away and over the hills, and meet with the prince\n" +
              "and princess who are its rulers.  They will give you top secret information about\n" +
              "what they saw. Use this information to find the country's precious necklace,\n" +
              "rumoured to be magical in nature. "
