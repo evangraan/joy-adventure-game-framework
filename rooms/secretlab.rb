@@ -1,12 +1,29 @@
 module Adventure
   class Secretlab < Room
     def describe(character)
-      puts "You are in a secret laboratory! A large table and shelves are stacked\n" +
+      if (character.has?('royal pass'))
+        puts "You once again find yourself in the secret laboratory.\n" +
+             "This time, you use a secret spy computer to report your\n" +
+             "mission's success. It beeps and you receive a single encoded\n" +
+             "message. It reads 'WELL DONE AGENT #{character.name}'\n" +
+             "You smile with confidence and satisfaction. You are about to put\n" +
+             "the computer down, when it urgently beeps again. Another encoded message!\n" +
+             "The message reads: 'Agent #{character.name}, you are urgently required in\n" +
+             "Switzerland. There is trouble afoot and we need our best.'\n" +
+             "With excitement in your heart you reach for the big red button.\n" +
+             "Another adventure is about to being!\n"
+
+        puts "\n THE END\n"
+        exit
+      else
+        puts "You are in a secret laboratory! A large table and shelves are stacked\n" +
            "with spy gear and cool things, such as grappling hooks, night vision\n" +
            "goggles, pens that explode when you click them, invisible ink, small\n" +
-           "computers and a big red button. On the table lies a secret envelope with\n" +
-           "#{character.name} written on in! It must be a new mission! Next to the\n" +
-           "envelope is a strange device labeled 'teleporter'"
+           "computers and a big red button.\n"
+        puts "On the table lies a secret envelope with\n" +
+             "#{character.name} written on in! It must be a new mission! Next to the\n" +
+             "envelope is a strange device labeled 'teleporter'"
+      end
     end
 
     def interpret(rooms, action, character)

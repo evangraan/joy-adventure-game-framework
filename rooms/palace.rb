@@ -2,7 +2,23 @@ module Adventure
   class Palace < Room
     def describe(character)
       if (character.has?('royal necklace'))
-        puts "TBD"
+        puts "You take the necklace from your back-pack and hand it to the queen.\n" +
+             "Tears well up in her eyes, and she exclaims: Adventurer '#{character.name}!\n" +
+             "How can we thank you! You have saved our royal party and have restored our\n" +
+             "faith in mankind! Where did you find our precious necklace?'\n" +
+             "You tell them of your adventure, and as you relate encountering the troll,\n" +
+             "the assembled subjects cheer at your victory. 'That beast has plagued us long enough!'\n" +
+             "shouts the king. 'Thank you for teaching it a lesson. Captain of the guard, assemble\n" +
+             "the troops! Let us follow up on #{character.name}'s victory and go chase it away!'\n" +
+             "As you describe the thicket and revealed the culprits to be the crows, the queen\n" +
+             "laughs and applauds your efforts. 'What a relief! Our thief is not one of our own,\n" +
+             "but a crow! I'll have the window closed and the necklace restored to its place!\n" +
+             "The queen then insists that you stay for the royal ball that evening, and you have\n" +
+             "a marvellous time! As the evening draws to a conclusion, the king presents you with a\n" +
+             "royal pass, granting you free access and his blessing anywhere in his kingdom. You thank\n" +
+             "his royal highness and bid the kingdom farewell. As a super spy, the time has come for you\n" +
+             "to report back on your mission and take on a new adventure. You should now 'teleport to Secretlab'"
+       character.give('royal pass')
       elsif (character.has?('crow feather'))
         puts "The palace citizens talk in hushed tones about your amazing \n" +
         "climb up the palace wall. You hear the words 'amazing!' and 'wondrous!' \n" +

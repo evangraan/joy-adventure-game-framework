@@ -51,7 +51,7 @@ module Adventure
 
     def describe_location_to_character(character)
       if not character.location_seen
-        character.location.describe(@character) 
+        character.location.describe(character) 
         character.location_seen = true
       end 
       character
