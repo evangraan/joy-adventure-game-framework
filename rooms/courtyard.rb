@@ -12,7 +12,7 @@ module Adventure
     end
 
     def interpret(rooms, action, character)
-      if (action.include?('palace') or action.include?('knight'))
+      if (action.include?('palace') or action.include?('knight') or action.include?('show') or action.include?('pass'))
         if (character.has?('palace pass'))
           puts "You show your palace pass to the group of knights, who nod approvingly and step aside to let you in."
           character.change_location(rooms['Palace'])

@@ -74,6 +74,7 @@ module Adventure
         puts "With a !!WOOSH!! a panel in the wall slides open and reveals a mega fast looking tube car and a\n" +
              "tunnel stretching into the distance. The destination dial says 'to the land far, far away and over\n" +
             "the hills'. You get in."
+        character.give('teleportation device')
         character.change_location(rooms['Tubecar'])
       elsif (action.include?('teleport') and (not action.include?('teleport to')))
         if character.has?('teleportation device')
